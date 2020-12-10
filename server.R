@@ -71,6 +71,15 @@ for(x in c('Hospital log odds ratio','Female log odds ratio'))
   summary_table[[x]][grepl('Na|Inf',summary_table[[x]])] <- ''
 
 
+
+regions <- dimnames(cllist[[1]][[1]]$trend)$NUTS1
+regions <- regions[regions!='']
+cols <- rainbow(length(regions))
+reg.options <- gsub('_',' ',regions)
+reg.colors <- cols[1:length(regions)]
+variant_names <- names(cllist[[2]])
+gene_names <- names(cllist)
+
 for(g in 1:length(trends)){
   growths <- subset(summary_table,Gene==gene_names[g])$`Mean recent growth`
   neworder <- order(growths,decreasing=T)
