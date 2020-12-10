@@ -37,7 +37,7 @@ median_growths <- lapply(trends,function(y)lapply(y,function(x){
   n2 <- n2[pos]
   rate <- 0
   if(sum(pos)>4){
-    l1 <- min(c((ll-13):ll)[pos2[(ll-13):ll]],na.rm=T)
+    suppressWarnings(l1 <- min(c((ll-13):ll)[pos2[(ll-13):ll]],na.rm=T))
     odds <- approx(x=c(1:ll)[pos],y=n2/n1,xout=c(l1,ll-3))$y
     logodds <- diff(log(odds))
     if(!is.na(logodds)) rate <- logodds
