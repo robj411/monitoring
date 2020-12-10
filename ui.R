@@ -68,11 +68,11 @@ shinyUI(
                                  column(3,plotOutput('legend'))
                         ),
                         tabPanel("Frequencies by region",
-                                 column(5,fluidRow(
+                                 column(4,fluidRow(
                                    checkboxGroupInput('ti_region2', label = 'Regions', choices=NULL,selected=NULL)
                                  )),
-                                 column(6,
-                                        fluidRow( plotOutput( 'trend2', width = "100%", height = "300px")))
+                                 column(8,
+                                        fluidRow( plotOutput( 'trend2', width = "100%", height = "400px")))
                                  ))),
              
              tabPanel("Genes summarised",

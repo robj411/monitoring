@@ -198,7 +198,7 @@ shiny::shinyServer(function(input, output, session) {
         colScale <- scale_colour_manual(name = regions,values = reg.colors)
         output$trend2 <- renderPlot({
           suppressWarnings(suppressMessages(ggplot(t1, aes( x = as.numeric(week), y = variant )  ) + 
-                                              geom_line (aes( colour=factor(regionnanme) ))  + #colScale +
+                                              geom_line (aes( colour=factor(regionnanme) ),size=1.5)  + #colScale +
                                               theme_minimal() + 
                                               scale_colour_manual(values = reg.colors[match(unique(t1$regionnanme),regions)]) +
                                               theme( legend.pos='',
