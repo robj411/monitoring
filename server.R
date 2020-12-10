@@ -160,7 +160,6 @@ shiny::shinyServer(function(input, output, session) {
       value <- names(new_variant)
       variable <- paste0(names(cllist)[g],gsub('p','',names(cllist[[g]])[i]))
       n <- rowSums(total)
-      print(as.numeric(rownames(total)))
       output$trend <- renderPlot({
         suppressWarnings(suppressMessages(ggplot(  aes( x = as.numeric(week), y = variant ) , 
                                                    data= data.frame(week=rownames(total),variant=n1,stringsAsFactors = F) ) + 
